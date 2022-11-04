@@ -8,9 +8,9 @@ def talker():  """Llamamos la función que creara una publicacion a través de u
     i = 0  """ iniciamos un contador para enumerar los mensajes"""
     while not rospy.is_shutdown():  """Iniciamos un loop para publicar el mensaje y frenar la comunicación con rate.sleep()"""
         hello_str= "hello world %s" % i
-        rospy.loginfo(hello_str)
-        pub.publish(hello_str)
-        rate.sleep()
+        rospy.loginfo(hello_str) 
+        pub.publish(hello_str) """Imprimimos hello"""
+        rate.sleep() """apagamos el rate del nodo momentaneamente"""
         i=i+1
 if __name__ == '__main__':  """condicion de salida por si hay alguna interrupcion en el funcionamiento de ROS"""
     try:
