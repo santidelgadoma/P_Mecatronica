@@ -161,6 +161,18 @@ void lightSensor() {
   L_LDR = analogRead(fotoI) ; // Restamos 200 para hacer tender la diferencia a 0 en estado inicial. 
   B_LDR = analogRead(fotoA);
   diferencia_luz = R_LDR - L_LDR;
+  lcd.setCursor(0,0);   
+  lcd.print("L: ");
+  lcd.print(L_LDR);
+  lcd.setCursor(8,0);
+  lcd.print("R: ");
+  lcd.print(R_LDR);   //Imprimimos los valores que resultan de los fotoresistores para tener una interfaz que podamos usar para evaluar resultados
+  lcd.setCursor(0,1);
+  lcd.print("D: ");
+  lcd.print(diferencia_luz);
+  lcd.setCursor(8,1);
+  lcd.print("A: ");
+  lcd.print(B_LDR);
 }
 void distanceSensor() {
   vsharpP = analogRead(sharpP);
